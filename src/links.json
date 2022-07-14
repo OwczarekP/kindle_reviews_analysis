@@ -1,0 +1,23 @@
+{
+	"kindle_ads" : {
+	"date": "14-07-2022",
+	"website": "https://www.amazon.com/dp/B07978J597?ref=erdcatpage_meetfam_j&th=1"
+	},
+	"kindle_no_ads" : {
+	"date": "14-07-2022",
+	"website": "https://www.amazon.com/dp/B07FPX819Q?ref=erdcatpage_meetfam_j&th=1"
+	},
+	"kindle_paperwhite_ads" : {
+	"date": "14-07-2022",
+	"website": "https://www.amazon.com/dp/B08KTZ8249?ref=erdcatpage_meetfam_m&th=1"
+	},
+	"kindle_paperwhite_no_ads" : {
+	"date": "14-07-2022",
+	"website": "https://www.amazon.com/dp/B08N38WQSH?ref=erdcatpage_meetfam_m&th=1"
+	},
+	"kindle_paperwhite_signature_edition" : {
+	"date": "14-07-2022",
+	"website": "https://www.amazon.com/dp/B08B495319?ref=erdcatpage_meetfam_mp"
+	}
+
+}
