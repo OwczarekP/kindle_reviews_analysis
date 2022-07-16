@@ -24,6 +24,7 @@ def read_json(file_path):
 
 def main():
     json_links = read_json(LINKS_PATH)
+    print(json_links[AVAILABLE_MODELS[0]]['website'])
     
 if __name__=="__main__":
     main()
