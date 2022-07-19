@@ -1,3 +1,6 @@
 #directories
 data/
 notes/
+
+#MySQL config file
+src/config.py
