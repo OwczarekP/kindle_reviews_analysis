@@ -35,12 +35,13 @@ HEADERS = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36',
 }
 
+
 conf = {
     'host': config.SQL_HOST,
     'user': config.SQL_USER,
     'password': config.SQL_PWD,
     'auth_plugin': config.SQL_AUTH,
-    #'db': config.SQL_DB
+    'db': config.SQL_DB
     }
 
 
@@ -70,7 +71,8 @@ def get_review_id(review):
 
 
 def get_review_score(review):
-    review.find("span", {"class" : "a-icon-alt"}).get_text()[:1]
+    score = review.find("span", {"class" : "a-icon-alt"}).get_text()[:1]
+    return int(score)
     
 def get_review_date(review):
     review_date_place = review.find("span", {"class": "review-date"}).get_text()
@@ -94,15 +96,64 @@ def get_review_elements(review):
 def add_review_to_db(review):
     pass
 
+
+def create_table(db):
+    db.execute("""CREATE TABLE IF NOT EXISTS 
+               reviews (id VARCHAR(255) NOT NULL, 
+               text VARCHAR(255) NOT NULL,
+					country VARCHAR(255) NOT NULL,
+					score INT(1) NOT NULL,
+					date DATE NOT NULL,
+					model VARCHAR(255) NOT NULL,
+					UNIQUE (ID)
+					)
+					""")
+
+def get_next_page(website):
+    try:
+        next_page = re.search(r'<a href="(.*?)">Next page<', website).group(1)
+        next_page = 'https://www.amazon.com' + next_page
+        return next_page
+    except:
+        return None
+    
+
+# https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07978J597/ref=cm_cr_arp_d_paging_btm_2?ie=UTF8&pageNumber=2
+# https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07978J597/ref=cm_cr_arp_d_paging_btm_2?ie=UTF8&amp;pageNumber=2&amp;reviewerType=all_reviews
 def main():
-    df = mysql.connector.connect(**conf
+    db = mysql.connector.connect(**conf
     )
+    cursor = db.cursor()
+    create_table(cursor)
     json_links = read_json(LINKS_PATH)
-    test_website = json_links[AVAILABLE_MODELS[0]]['website']
-    test_html = get_page_text(test_website)
-    reviews = get_reviews(test_html)
-    for review in reviews:
-        get_review_elements(review)
+    
+    
+    for kindle_model in AVAILABLE_MODELS:
+        reviews = 'init'
+        kindle_website = json_links[kindle_model]['website']
+        page_number = 1
+        while reviews is not None:
+            review_website = kindle_website + str(page_number)
+            page_html = html = get_page_text(review_website)
+            page_number += 1
+            reviews = get_reviews(page_html)
+            print(len(reviews))
+            
+            
+        
+    
+    
+    
+    # test_website = json_links[AVAILABLE_MODELS[0]]['website']
+    # test_website = 'https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07978J597/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewerType=all_reviews&formatType=current_format&pageNumber=740'
+    # test_
+    # print(get_next_page(test_html))
+    # while reviews is not None:
+    #     reviews = get_reviews(test_html)
+    #     print(len(reviews))
+    # print('none')
+    # for review in reviews:
+    #     get_review_elements(review)
 
 
     

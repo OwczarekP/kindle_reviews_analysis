@@ -1,23 +1,23 @@
 {
 	"kindle_ads" : {
 	"date": "17-07-2022",
-	"website": "https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07978J597/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews"
+	"website": "https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07978J597/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewerType=all_reviews&formatType=current_format&pageNumber="
 	},
 	"kindle_no_ads" : {
 	"date": "17-07-2022",
-	"website": "https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07FPX819Q/ref=cm_cr_othr_d_show_all_btm?ie=UTF8&reviewerType=all_reviews"
+	"website": "https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07FPX819Q/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewer&formatType=current_format&pageNumber="
 	},
 	"kindle_paperwhite_ads" : {
 	"date": "17-07-2022",
-	"website": "https://www.amazon.com/All-new-Kindle-Paperwhite-adjustable-Ad-Supported/product-reviews/B08KTZ8249/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews"
+	"website": "https://www.amazon.com/All-new-Kindle-Paperwhite-adjustable-Ad-Supported/product-reviews/B08KTZ8249/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewer&formatType=current_format&pageNumber="
 	},
 	"kindle_paperwhite_no_ads" : {
 	"date": "17-07-2022",
-	"website": "https://www.amazon.com/All-new-kindle-paperwhite/product-reviews/B08N38WQSH/ref=cm_cr_othr_d_show_all_btm?ie=UTF8&reviewerType=all_reviews"
+	"website": "https://www.amazon.com/All-new-kindle-paperwhite/product-reviews/B08N38WQSH/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewer&formatType=current_format&pageNumber="
 	},
 	"kindle_paperwhite_signature_edition" : {
 	"date": "17-07-2022",
-	"website": "https://www.amazon.com/Introducing-kindle-paperwhite-Signature-Edition/product-reviews/B08B495319/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews"
+	"website": "https://www.amazon.com/Introducing-kindle-paperwhite-Signature-Edition/product-reviews/B08B495319/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewer&formatType=current_format&pageNumber="
 	}
 
 }
