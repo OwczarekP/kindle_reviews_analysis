@@ -77,7 +77,7 @@ def get_review_score(review):
 def get_review_date(review):
     review_date_place = review.find("span", {"class": "review-date"}).get_text()
     review_date = datefinder.find_dates(review_date_place)
-    review_date = next(review_date).strftime("%d-%m-%Y")
+    review_date = next(review_date).strftime('%Y-%m-%d')
     return review_date
 
 def get_review_country(review):
@@ -85,22 +85,26 @@ def get_review_country(review):
     return re.search( r'in (.*?) on' ,str(review_date_place)).group(1)
 
 
-def get_review_elements(review):
+def get_review_elements(review, kindle_model, cursor):
     review_id = get_review_id(review)
     review_score = get_review_score(review)
-    revieww_text = get_review_text(review)
+    review_text = get_review_text(review)
     review_country = get_review_country(review)
     review_date = get_review_date(review)
-
-
-def add_review_to_db(review):
-    pass
-
+    
+    query = """INSERT IGNORE INTO reviews
+    (id, text, country, score, date, model)
+    VALUES
+    (%s, %s, %s, %s, %s, %s)"""
+    val = (review_id, review_text, review_country, 
+           review_score, review_date, kindle_model)
+    cursor.execute(query, val)
+    
 
 def create_table(db):
     db.execute("""CREATE TABLE IF NOT EXISTS 
                reviews (id VARCHAR(255) NOT NULL, 
-               text VARCHAR(255) NOT NULL,
+               text LONGTEXT NOT NULL,
 					country VARCHAR(255) NOT NULL,
 					score INT(1) NOT NULL,
 					date DATE NOT NULL,
@@ -109,52 +113,27 @@ def create_table(db):
 					)
 					""")
 
-def get_next_page(website):
-    try:
-        next_page = re.search(r'<a href="(.*?)">Next page<', website).group(1)
-        next_page = 'https://www.amazon.com' + next_page
-        return next_page
-    except:
-        return None
-    
-
-# https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07978J597/ref=cm_cr_arp_d_paging_btm_2?ie=UTF8&pageNumber=2
-# https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07978J597/ref=cm_cr_arp_d_paging_btm_2?ie=UTF8&amp;pageNumber=2&amp;reviewerType=all_reviews
 def main():
     db = mysql.connector.connect(**conf
     )
     cursor = db.cursor()
     create_table(cursor)
     json_links = read_json(LINKS_PATH)
-    
-    
     for kindle_model in AVAILABLE_MODELS:
-        reviews = 'init'
-        kindle_website = json_links[kindle_model]['website']
-        page_number = 1
-        while reviews is not None:
-            review_website = kindle_website + str(page_number)
-            page_html = html = get_page_text(review_website)
-            page_number += 1
-            reviews = get_reviews(page_html)
-            print(len(reviews))
-            
-            
-        
-    
-    
-    
-    # test_website = json_links[AVAILABLE_MODELS[0]]['website']
-    # test_website = 'https://www.amazon.com/Kindle-Now-with-Built-in-Front-Light/product-reviews/B07978J597/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewerType=all_reviews&formatType=current_format&pageNumber=740'
-    # test_
-    # print(get_next_page(test_html))
-    # while reviews is not None:
-    #     reviews = get_reviews(test_html)
-    #     print(len(reviews))
-    # print('none')
-    # for review in reviews:
-    #     get_review_elements(review)
-
+        try:
+            reviews = 'init'
+            kindle_website = json_links[kindle_model]['website']
+            page_number = 1
+            while len(reviews) > 1:
+                review_website = kindle_website + str(page_number)
+                page_html = get_page_text(review_website)
+                page_number += 1
+                reviews = get_reviews(page_html)
+                for review in reviews:
+                    get_review_elements(review, kindle_model, cursor)
+                    db.commit()
+        except Exception:
+            pass
 
     
 if __name__=="__main__":

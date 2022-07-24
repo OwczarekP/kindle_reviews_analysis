@@ -1,0 +1,23 @@
+{
+	"kindle_ads" : {
+	"date": "24-07-2022",
+	"website": "https://www.amazon.co.uk/kindle-now-with-a-built-in-front-light%E2%80%94with-special-offers%E2%80%94black/product-reviews/B07FQ4DJ7X/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewerType=all_reviews&formatType=current_format&pageNumber="
+	},
+	"kindle_no_ads" : {
+	"date": "24-07-2022",
+	"website": "https://www.amazon.co.uk/kindle-now-with-a-built-in-front-light%E2%80%94black/product-reviews/B07FQ4XCR1/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewerType=all_reviews&formatType=current_format&pageNumber="
+	},
+	"kindle_paperwhite_ads" : {
+	"date": "24-07-2022",
+	"website": "https://www.amazon.co.uk/kindle-paperwhite-8-gb-now-with-a-68-display-and-adjustable-warm-light-with-ads/product-reviews/B08N3TCP2F/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewerType=all_reviews&formatType=current_format&pageNumber="
+	},
+	"kindle_paperwhite_no_ads" : {
+	"date": "24-07-2022",
+	"website": "https://www.amazon.co.uk/kindle-paperwhite-8-gb-now-with-a-68-display-and-adjustable-warm-light-without-ads/product-reviews/B08N36XNTT/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewerType=all_reviews&formatType=current_format&pageNumber="
+	},
+	"kindle_paperwhite_signature_edition" : {
+	"date": "24-07-2022",
+	"website": "https://www.amazon.co.uk/kindle-paperwhite-signature-edition-32-gb-with-a-68-display-wireless-charging-and-auto-adjusting-front-light/product-reviews/B08N2QK2TG/ref=cm_cr_arp_d_viewopt_fmt?ie=UTF8&reviewerType=all_reviews&formatType=current_format&pageNumber="
+	}
+
+}

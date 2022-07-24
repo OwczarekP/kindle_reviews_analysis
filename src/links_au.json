@@ -1,0 +1,15 @@
+{
+	"kindle_no_ads" : {
+	"date": "24-07-2022",
+	"website": "https://www.amazon.com.au/Kindle-now-built-front-light/product-reviews/B07FQ4XCR1/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewer&formatType=current_format&pageNumber="
+	},
+	"kindle_paperwhite_no_ads" : {
+	"date": "24-07-2022",
+	"website": "https://www.amazon.com.au/Kindle-Paperwhite-8GB-6.8-inch-display/product-reviews/B08N3J8GTX/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewer&formatType=current_format&pageNumber="
+	},
+	"kindle_paperwhite_signature_edition" : {
+	"date": "24-07-2022",
+	"website": "https://www.amazon.com.au/Kindle-Paperwhite-32GB-Signature-Edition-6.8-inch-display-and-wireless-charging/product-reviews/B08N2ZL7PS/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&formatType=current_format&pageNumber="
+	}
+
+}

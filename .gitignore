@@ -1,6 +1,7 @@
 #directories
 data/
 notes/
+powerBI/
 
 #MySQL config file
 src/config.py
