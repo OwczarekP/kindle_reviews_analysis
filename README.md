@@ -1,4 +1,4 @@
-### Kindle Reviews Analysis
+# Kindle Reviews Analysis
 This project focus on analysis of reviews of the different versions of Kindle products:
 * Kindle classic ads version
 * Kindle classic non-ads version
@@ -25,10 +25,17 @@ Additionaly the Sentiment Classification of reviews will be provided.
 * datefinder==0.7.1
 * mysql_connector_repackaged==0.3.1
 * requests==2.28.1
+
+## PowerBI Visualization
+
+![PowerBI-Vis]('./powerBI/powerBI_v00.png')
+
+Check this online: TO-DO
+
 ## TO-DO
 - [x] Scrap Amazon Reviews & store in SQL database
 - [ ] PowerBI Visualization
-- [ ] Data cleaning
+- [x] Data cleaning
 - [ ] Exploratory Data Analysis
 - [ ] Review Processing for Classification
 - [ ] Sentiment Classification
