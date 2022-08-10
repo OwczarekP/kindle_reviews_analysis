@@ -28,7 +28,7 @@ Additionaly the Sentiment Classification of reviews will be provided.
 
 ## PowerBI Visualization
 
-![PowerBI-Vis]('./powerBI/powerBI_v00.png')
+![PowerBI-Vis](./powerBI/powerBI_v00.png)
 
 Check this online: TO-DO
 
